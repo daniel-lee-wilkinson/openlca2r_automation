@@ -10,7 +10,7 @@ This repository contains scripts and workflows for extracting, cleaning, and ana
 - [Data Files](#data-files)
 - [Scripts Overview](#scripts-overview)
 - [Usage](#usage)
-- [Visualization](#visualisation)
+- [Visualisation](#visualisation)
 - [Methodology](#methodology)
 - [Technical Approach](#technical-approach)
 - [Contributing](#contributing)
@@ -100,7 +100,7 @@ Rscript impact_methodology.R
 
 After running, check console output for previews and any integrity check messages.
 
-## Visualization
+## visualisation
 
 This project uses **ggplot2** for all graphing and charting needs, ensuring reproducible, high-quality plots. Key visualisations include:
 
@@ -140,7 +140,7 @@ This project uses **ggplot2** for all graphing and charting needs, ensuring repr
    - **Techniques**: Use `cellranger::cell_limits` to define data ranges; reshape with `tidyr::pivot_longer` and `pivot_wider`; perform integrity checks via `dplyr::filter` and summary statistics.
    - **Tools**: R, `readxl`, `dplyr`, `tidyr`, `cellranger`.
 
-3. **LCIA Results Reshaping & Visualization**
+3. **LCIA Results Reshaping & visualisation**
    - **Purpose**: Process the `LCIA Results` sheet and create comparative impact heatmaps.
    - **Techniques**: Normalize (z-score) impact values for comparability; reshape with `tidyr::pivot_longer`; visualize using `ggplot2` with a diverging color scale.
    - **Tools**: R, `tidyr`, `dplyr`, `ggplot2`.
