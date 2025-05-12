@@ -1,6 +1,6 @@
-# OpenLCA2r_automation: OpenLCA LCI/LCIA Data Processing iN R
+# LICA Data Automation Project -  openlca2r_automation
 
-This repository contains scripts and workflows for extracting, cleaning, and analyzing Life Cycle Inventory (LCI) and Life Cycle Impact Assessment (LCIA) results for a cooling system product system. It automates reading from Excel exports, restructuring data into tidy formats, performing quality checks, and generating basic visualizations.
+This repository contains scripts and workflows for extracting, cleaning, and analysing Life Cycle Inventory (LCI) and Life Cycle Impact Assessment (LCIA) results for an example cooling system product system exported from OpenLCA 2. It automates reading from Excel exports, restructuring data into tidy formats, performing quality checks, and generating basic visualisations.
 
 ## Table of Contents
 
@@ -10,11 +10,11 @@ This repository contains scripts and workflows for extracting, cleaning, and ana
 - [Data Files](#data-files)
 - [Scripts Overview](#scripts-overview)
 - [Usage](#usage)
-- [Visualization](#visualization)
+- [Visualization](#visualisation)
 - [Methodology](#methodology)
 - [Technical Approach](#technical-approach)
 - [Contributing](#contributing)
-- [License](#license)
+- [License](#licence)
 
 ## Description
 
@@ -23,7 +23,7 @@ The cooling project workflows perform the following tasks:
 1. **Extract general project info** (name, description, LCIA method, variants, parameters)  
 2. **Parse LCI Results** into inputs and outputs tables with integrity checks  
 3. **Parse LCIA Results** and reshape for analysis  
-4. **Analyze Impacts** (Pareto analysis of impact categories)  
+4. **Analyse Impacts** (Pareto analysis of impact categories)  
 5. **Clean Inventory Data** for material and emissions flows  
 6. **Process Direct Impact Contributions** and reshape into long format  
 7. **Process Direct Inventory Contributions** similarly  
@@ -35,17 +35,14 @@ All scripts assume the corresponding Excel workbooks are in the working director
 
 - **R** (version ≥ 3.6)  
 - **R packages**:  
-  - `readxl`  
-  - `dplyr`  
-  - `tidyr`  
   - `tidyverse`  
   - `cellranger`  
-  - `ggplot2`  
+  - `readxl`
 
 Install missing packages with:
 
 ```r
-install.packages(c("readxl", "dplyr", "tidyr", "tidyverse", "cellranger", "ggplot2"))
+install.packages(c("readxl", "tidyverse", "cellranger"))
 ```
 
 ## Installation
@@ -53,11 +50,11 @@ install.packages(c("readxl", "dplyr", "tidyr", "tidyverse", "cellranger", "ggplo
 1. Clone this repository:
    ```bash
    git clone https://github.com/daniel-lee-wilkinson/openlca2r_automation.git
-   cd cooling-lcia-workflow
+   cd openlca2r_automation
    ```
 2. Place the Excel files in the project root:
    - `project result.xlsx` (sheets: `Info`, `LCI Results`, `LCIA Results`)  
-   - `3__Cooling.xlsx` (sheets: `Impacts`, `Inventory`, `Direct impact contributions`, `Direct inventory contributions`, `Calculation setup`)  # example output from OpenLCA 2
+   - `3__Cooling.xlsx` (sheets: `Impacts`, `Inventory`, `Direct impact contributions`, `Direct inventory contributions`, `Calculation setup`)  # example output from OpenLCA 2, Excel worksheet names are standard
 
 ## Data Files
 
@@ -67,7 +64,7 @@ install.packages(c("readxl", "dplyr", "tidyr", "tidyverse", "cellranger", "ggplo
   - `LCIA Results`: impact assessment results by category & scenario  
 
 - **3__Cooling.xlsx**  
-  - `Impacts`: normalized impact shares for Pareto analysis  
+  - `Impacts`: normalised impact shares for Pareto analysis  
   - `Inventory`: raw material/emission inventory flows  
   - `Direct impact contributions`: process-level impact contributions  
   - `Direct inventory contributions`: process-level emission/inventory contributions  
@@ -105,7 +102,7 @@ After running, check console output for previews and any integrity check message
 
 ## Visualization
 
-This project uses **ggplot2** for all graphing and charting needs, ensuring reproducible, high-quality plots. Key visualizations include:
+This project uses **ggplot2** for all graphing and charting needs, ensuring reproducible, high-quality plots. Key visualisations include:
 
 - **Diverging Heatmap** (in `project_lcia_results.R`):
   - Displays z-scored LCIA results per scenario and impact category.
@@ -183,6 +180,4 @@ This project uses **ggplot2** for all graphing and charting needs, ensuring repr
 
 Please include clear descriptions of any new scripts or changes to existing workflows.
 
-## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
