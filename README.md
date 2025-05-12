@@ -100,7 +100,7 @@ Rscript impact_methodology.R
 
 After running, check console output for previews and any integrity check messages.
 
-## visualisation
+## Visualisation
 
 This project uses **ggplot2** for all graphing and charting needs, ensuring reproducible, high-quality plots. Key visualisations include:
 
